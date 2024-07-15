@@ -13,7 +13,13 @@ public class StudentRepo {
         return student;
     }
 
-    public Optional<Student> findStudentById(String id) {
-        return Optional.ofNullable(students.get(id));
+    public Student findStudentById(String id) {
+        try{
+            return students.get(id);
+        }catch(NullPointerException e){
+            System.out.println("Student not found" + e.getMessage());
+            return null;
+        }
+
     }
 }
