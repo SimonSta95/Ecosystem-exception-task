@@ -18,11 +18,11 @@ class StudentRepoTest {
         studentRepo.save(student);
 
         Student foundStudent = studentRepo.findStudentById("1");
-        assertNotNull(foundStudent, "Student should be found");
-        assertEquals("John Doe", foundStudent.name(), "Student name should match");
+        assertNotNull(foundStudent);
+        assertEquals("John Doe", foundStudent.name());
 
         Student notFoundStudent = studentRepo.findStudentById("2");
-        assertNull(notFoundStudent, "Student with non-existing ID should return null");
+        assertNull(notFoundStudent);
     }
 
 }
